@@ -1,5 +1,5 @@
 <h1>Welcome to Troop 223!</h1>
-V2.S1.05
+V2.S1.06
   <hr>
 
 <div class="search-container">
@@ -416,9 +416,9 @@ text-align: left;
         setTimeout(() => {
           // Simulated search results (replace with actual data fetching logic)
           const searchResults = [
-            { title: 'Result 1', link: 'http://example.com/result1' },
-            { title: 'Result 2', link: 'http://example.com/result2' },
-            { title: 'Result 3', link: 'http://example.com/result3' }
+            { title: 'Hello', link: 'http://example.com/result1' },
+            { title: 'Hi', link: 'http://example.com/result2' },
+            { title: 'Hey', link: 'http://example.com/result3' }
           ];
           resolve(searchResults);
         }, 500); // Simulated delay of 500 milliseconds
