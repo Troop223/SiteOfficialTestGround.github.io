@@ -1,5 +1,5 @@
 <h1>Welcome to Troop 223!</h1>
-V2
+V2.2
   <hr>
 
  <div class="search-container">
@@ -7,7 +7,13 @@ V2
     <button onclick="searchFunction()">Search</button>
   </div>
   <div id="searchResults">
-    <!-- Search results will be displayed here -->
+
+<ul>
+  <li><a href="https://troop223.github.io/NewsHub">News</a></li>
+  <li><a href="https://troop223.github.io/UpcomingEventsHub">Upcoming Events</a></li>
+  <li><a href="https://troop223.github.io/CampHistoryHub">Trip History</a></li> 
+</ul>
+    
   </div>
 
 <div class="left">
