@@ -1,14 +1,15 @@
 <h1>Welcome to Troop 223!</h1>
-V2.04
+V2.05
   <hr>
 
- <div class="search-container">
+<div class="search-container">
     <input type="text" id="searchInput" placeholder="Search...">
+    <button class="search-button" onclick="searchFunction()">Search</button>
   </div>
   <div id="searchResults">
     <!-- Search results will be displayed here -->
   </div>
-
+  
 <div class="left">
 <h5>
 
