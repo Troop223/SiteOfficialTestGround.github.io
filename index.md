@@ -1,14 +1,13 @@
 <h1>Welcome to Troop 223!</h1>
-V2.S1.06
+V3.T1.01
   <hr>
-
-<div class="search-container">
-    <input type="text" id="searchInput" placeholder="Search...">
-    <button class="search-button" onclick="searchFunction()">Search</button>
-  </div>
-  <div id="searchResults">
-    <!-- Search results will be displayed here -->
-  </div>
+  
+<div class="topnav">
+  <a class="active" href="#home">Home</a>
+  <a href="#news">News</a>
+  <a href="#contact">Contact</a>
+  <a href="#about">About</a>
+</div>
   
 <div class="left">
 <h5>
@@ -328,7 +327,8 @@ Or call:  423-355-4430
 body {
 
 text-align: center;
-
+margin: 0;
+font-family: Arial, Helvetica, sans-serif;
   
 }
 
@@ -350,96 +350,30 @@ text-align: left;
     
   }
 
-.search-container {
-      margin-top: 20px;
-    }
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
 
-    input[type=text] {
-      padding: 10px;
-      width: 200px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-sizing: border-box;
-    }
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
 
-    .search-result {
-      margin-top: 10px;
-    }
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
 
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+  
 </style>
 
 
-
-<script>
-    const searchInput = document.getElementById('searchInput');
-    const searchResultsContainer = document.getElementById('searchResults');
-
-    // Load search history from localStorage
-    const searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || [];
-
-    // Populate search input with last search term from history
-    if (searchHistory.length > 0) {
-      searchInput.value = searchHistory[searchHistory.length - 1];
-    }
-
-    searchInput.addEventListener('input', function() {
-      const searchTerm = searchInput.value.trim();
-
-      if (searchTerm !== '') {
-        // Add search term to search history
-        if (!searchHistory.includes(searchTerm)) {
-          searchHistory.push(searchTerm);
-          // Limit search history to 5 items
-          if (searchHistory.length > 5) {
-            searchHistory.shift();
-          }
-          localStorage.setItem('searchHistory', JSON.stringify(searchHistory));
-        }
-
-        // Simulated async search function (replace with actual data fetching logic)
-        simulateSearch(searchTerm)
-          .then(results => {
-            displaySearchResults(results);
-          })
-          .catch(error => {
-            console.error('Error fetching search results:', error);
-          });
-      } else {
-        // Clear search results if search input is empty
-        clearSearchResults();
-      }
-    });
-
-    function simulateSearch(searchTerm) {
-      // Simulated async function that returns search results after a delay
-      return new Promise((resolve, reject) => {
-        setTimeout(() => {
-          // Simulated search results (replace with actual data fetching logic)
-          const searchResults = [
-            { title: 'Hello', link: 'http://example.com/result1' },
-            { title: 'Hi', link: 'http://example.com/result2' },
-            { title: 'Hey', link: 'http://example.com/result3' }
-          ];
-          resolve(searchResults);
-        }, 500); // Simulated delay of 500 milliseconds
-      });
-    }
-
-    function displaySearchResults(results) {
-      // Clear previous search results
-      searchResultsContainer.innerHTML = '';
-
-      // Create and append search result elements
-      results.forEach(result => {
-        const resultElement = document.createElement('div');
-        resultElement.classList.add('search-result');
-        resultElement.innerHTML = `<a href="${result.link}">${result.title}</a>`;
-        searchResultsContainer.appendChild(resultElement);
-      });
-    }
-
-    function clearSearchResults() {
-      // Clear search results container
-      searchResultsContainer.innerHTML = '';
-    }
-  </script>
