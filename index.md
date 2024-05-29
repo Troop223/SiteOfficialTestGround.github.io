@@ -7,13 +7,9 @@ V2.02
     <button onclick="searchFunction()">Search</button>
   </div>
   <div id="searchResults">
-
-<ul>
-  <li><a href="https://troop223.github.io/NewsHub">News</a></li>
-  <li><a href="https://troop223.github.io/UpcomingEventsHub">Upcoming Events</a></li>
-  <li><a href="https://troop223.github.io/CampHistoryHub">Trip History</a></li> 
-</ul>
-    
+    <ul id="searchResultsList">
+    <!-- Search results will be dynamically added here -->
+    </ul>
   </div>
 
 <div class="left">
@@ -392,23 +388,31 @@ button:hover {
 
 
 <script>
-
 function searchFunction() {
   var input, filter, ul, li, a, i, txtValue;
   input = document.getElementById('searchInput');
   filter = input.value.toUpperCase();
-  ul = document.getElementById('searchResults');
-  li = ul.getElementsByTagName('li');
+  ul = document.getElementById('searchResultsList');
+  // Clear previous search results
+  ul.innerHTML = '';
 
-  for (i = 0; i < li.length; i++) {
-    a = li[i].getElementsByTagName('a')[0];
-    txtValue = a.textContent || a.innerText;
-    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-      li[i].style.display = '';
-    } else {
-      li[i].style.display = 'none';
+  // Simulated search results (replace with actual data fetching logic)
+  var searchResults = [
+    { title: 'Result 1', link: 'http://example.com/result1' },
+    { title: 'Result 2', link: 'http://example.com/result2' },
+    { title: 'Result 3', link: 'http://example.com/result3' }
+  ];
+
+  // Filter and display search results
+  searchResults.forEach(function(result) {
+    if (result.title.toUpperCase().indexOf(filter) > -1) {
+      var li = document.createElement('li');
+      var a = document.createElement('a');
+      a.href = result.link;
+      a.textContent = result.title;
+      li.appendChild(a);
+      ul.appendChild(li);
     }
-  }
+  });
 }
-  
 </script>
