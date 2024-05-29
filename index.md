@@ -3,7 +3,7 @@ high
   <hr>
 
  <div class="row">
-  <div class="right" style="background-color:#bbb;">
+  <div class="left" style="background-color:#bbb;">
     <h2>Menu</h2>
     <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
     <ul id="myMenu">
@@ -366,8 +366,9 @@ text-align: left;
 
 /* Left column (menu) */
 .left {
-  flex: 92%;
+  flex: 8%;
   padding: 15px 0;
+  text-align: right;
 }
 
 .left h2 {
@@ -376,7 +377,7 @@ text-align: left;
 
 /* Right column (page content) */
 .right {
-  flex: 8%;
+  flex: 92%;
   padding: 15px;
 }
 
