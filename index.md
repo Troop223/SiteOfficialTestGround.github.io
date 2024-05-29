@@ -19,7 +19,7 @@
     </ul>
   </div>
 
-
+<div class="right">
 <h5>
 
   Here in troop 223, we aim to help our scouts achieve all they can, all the way up to First Class. 
@@ -329,8 +329,8 @@ Thats why its important to get the proper items for scouting, as it is both cruc
 Or call:  423-355-4430
   </p>
   </h6>
-
-
+</div>
+</div>
 
 <style>
 
