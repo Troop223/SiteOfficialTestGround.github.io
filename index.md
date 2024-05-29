@@ -2,6 +2,7 @@
 
   <hr>
 
+  <div class="SearchItemsLeft">
 <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
 
 <ul id="myMenu">
@@ -10,7 +11,7 @@
   <li><a href="https://troop223.github.io/CampHistoryHub">Old trips</a></li>
   <li><a href="#">Eagles</a></li>
 </ul>
-
+  </div>
 
 <h5>
 
@@ -377,6 +378,11 @@ text-align: left;
   background-color: #eee;
 }
 
+.SearchItemsLeft{
+
+text-align: left;
+  
+}
   
 </style>
 
