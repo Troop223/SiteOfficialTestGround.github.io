@@ -2,16 +2,23 @@
 
   <hr>
 
-  <div class="SearchItemsLeft">
-<input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
-
-<ul id="myMenu">
-  <li><a href="https://troop223.github.io/NewsHub">News</a></li>
-  <li><a href="https://troop223.github.io/UpcomingEventsHub">New trips</a></li>
-  <li><a href="https://troop223.github.io/CampHistoryHub">Old trips</a></li>
-  <li><a href="#">Eagles</a></li>
-</ul>
+ <div class="row">
+  <div class="left" style="background-color:#bbb;">
+    <h2>Menu</h2>
+    <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
+    <ul id="myMenu">
+      <li><a href="#">HTML</a></li>
+      <li><a href="#">CSS</a></li>
+      <li><a href="#">JavaScript</a></li>
+      <li><a href="#">PHP</a></li>
+      <li><a href="#">Python</a></li>
+      <li><a href="#">jQuery</a></li>
+      <li><a href="#">SQL</a></li>
+      <li><a href="#">Bootstrap</a></li>
+      <li><a href="#">Node.js</a></li>
+    </ul>
   </div>
+
 
 <h5>
 
@@ -352,6 +359,28 @@ text-align: left;
     
   }
 
+/* Create a column layout with Flexbox */
+.row {
+  display: flex;
+}
+
+/* Left column (menu) */
+.left {
+  flex: 35%;
+  padding: 15px 0;
+}
+
+.left h2 {
+  padding-left: 8px;
+}
+
+/* Right column (page content) */
+.right {
+  flex: 65%;
+  padding: 15px;
+}
+
+/* Style the search box */
 #mySearch {
   width: 100%;
   font-size: 18px;
@@ -359,14 +388,13 @@ text-align: left;
   border: 1px solid #ddd;
 }
 
-/* Style the navigation menu */
+/* Style the navigation menu inside the left column */
 #myMenu {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
 
-/* Style the navigation links */
 #myMenu li a {
   padding: 12px;
   text-decoration: none;
@@ -378,26 +406,18 @@ text-align: left;
   background-color: #eee;
 }
 
-.SearchItemsLeft{
 
-text-align: left;
-  
-}
-  
 </style>
 
 
 
 <script>
 function myFunction() {
-  // Declare variables
   var input, filter, ul, li, a, i;
   input = document.getElementById("mySearch");
   filter = input.value.toUpperCase();
   ul = document.getElementById("myMenu");
   li = ul.getElementsByTagName("li");
-
-  // Loop through all list items, and hide those who don't match the search query
   for (i = 0; i < li.length; i++) {
     a = li[i].getElementsByTagName("a")[0];
     if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
