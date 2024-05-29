@@ -1,9 +1,9 @@
 <h1>Welcome to Troop 223!</h1>
-hilo
+high
   <hr>
 
  <div class="row">
-  <div class="left" style="background-color:#bbb;">
+  <div class="right" style="background-color:#bbb;">
     <h2>Menu</h2>
     <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
     <ul id="myMenu">
@@ -19,7 +19,7 @@ hilo
     </ul>
   </div>
 
-<div class="right">
+<div class="left">
 <h5>
 
   Here in troop 223, we aim to help our scouts achieve all they can, all the way up to First Class. 
@@ -366,7 +366,7 @@ text-align: left;
 
 /* Left column (menu) */
 .left {
-  flex: 8%;
+  flex: 92%;
   padding: 15px 0;
 }
 
@@ -376,7 +376,7 @@ text-align: left;
 
 /* Right column (page content) */
 .right {
-  flex: 92%;
+  flex: 8%;
   padding: 15px;
 }
 
