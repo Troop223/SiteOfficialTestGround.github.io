@@ -1,22 +1,13 @@
 <h1>Welcome to Troop 223!</h1>
-hiylo
+V2
   <hr>
 
- <div class="row">
-  <div class="left" style="background-color:#bbb;">
-    <h2>Menu</h2>
-    <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
-    <ul id="myMenu">
-      <li><a href="https://troop223.github.io/CampHistoryHub">HTML</a></li>
-      <li><a href="#">CSS</a></li>
-      <li><a href="#">JavaScript</a></li>
-      <li><a href="#">PHP</a></li>
-      <li><a href="#">Python</a></li>
-      <li><a href="#">jQuery</a></li>
-      <li><a href="#">SQL</a></li>
-      <li><a href="#">Bootstrap</a></li>
-      <li><a href="#">Node.js</a></li>
-    </ul>
+ <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search...">
+    <button onclick="searchFunction()">Search</button>
+  </div>
+  <div id="searchResults">
+    <!-- Search results will be displayed here -->
   </div>
 
 <div class="left">
@@ -359,52 +350,35 @@ text-align: left;
     
   }
 
-/* Create a column layout with Flexbox */
-.row {
-  display: flex;
+  .search-container {
+  margin-top: 20px;
 }
 
-/* Left column (menu) */
-.left {
-  flex: 5%;
-  padding: 15px 0;
+input[type=text] {
+  padding: 10px;
+  width: 200px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
-.left h2 {
-  padding-left: 8px;
+button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-/* Right column (page content) */
-.right {
-  flex: 65%;
-  padding: 15px;
+button:hover {
+  background-color: #45a049;
 }
 
-/* Style the search box */
-#mySearch {
-  width: 100%;
-  font-size: 18px;
-  padding: 11px;
-  border: 1px solid #ddd;
+#searchResults {
+  margin-top: 20px;
 }
 
-/* Style the navigation menu inside the left column */
-#myMenu {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-#myMenu li a {
-  padding: 12px;
-  text-decoration: none;
-  color: black;
-  display: block
-}
-
-#myMenu li a:hover {
-  background-color: #eee;
-}
 
 
 </style>
@@ -412,19 +386,23 @@ text-align: left;
 
 
 <script>
-function myFunction() {
-  var input, filter, ul, li, a, i;
-  input = document.getElementById("mySearch");
+
+function searchFunction() {
+  var input, filter, ul, li, a, i, txtValue;
+  input = document.getElementById('searchInput');
   filter = input.value.toUpperCase();
-  ul = document.getElementById("myMenu");
-  li = ul.getElementsByTagName("li");
+  ul = document.getElementById('searchResults');
+  li = ul.getElementsByTagName('li');
+
   for (i = 0; i < li.length; i++) {
-    a = li[i].getElementsByTagName("a")[0];
-    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-      li[i].style.display = "";
+    a = li[i].getElementsByTagName('a')[0];
+    txtValue = a.textContent || a.innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = '';
     } else {
-      li[i].style.display = "none";
+      li[i].style.display = 'none';
     }
   }
 }
+  
 </script>
