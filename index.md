@@ -366,7 +366,7 @@ text-align: left;
 
 /* Left column (menu) */
 .left {
-  flex: 8%;
+  flex: 5%;
   padding: 15px 0;
 }
 
@@ -376,7 +376,7 @@ text-align: left;
 
 /* Right column (page content) */
 .right {
-  flex: 92%;
+  flex: 65%;
   padding: 15px;
 }
 
