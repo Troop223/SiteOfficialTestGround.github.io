@@ -7,7 +7,7 @@
     <h2>Menu</h2>
     <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
     <ul id="myMenu">
-      <li><a href="#">HTML</a></li>
+      <li><a href="https://troop223.github.io/CampHistoryHub">HTML</a></li>
       <li><a href="#">CSS</a></li>
       <li><a href="#">JavaScript</a></li>
       <li><a href="#">PHP</a></li>
