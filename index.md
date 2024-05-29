@@ -1,5 +1,5 @@
 <h1>Welcome to Troop 223!</h1>
-
+hi
   <hr>
 
  <div class="row">
@@ -367,7 +367,7 @@ text-align: left;
 /* Left column (menu) */
 .left {
   flex: 35%;
-  padding: 15px 0;
+  padding: 5px 0;
 }
 
 .left h2 {
