@@ -1,6 +1,5 @@
 <h1>Welcome to Troop 223!</h1>
-V3.T1.01
-  <hr>
+V3.T1.02
   
 <div class="topnav">
   <a class="active" href="#home">Home</a>
@@ -8,6 +7,8 @@ V3.T1.01
   <a href="#contact">Contact</a>
   <a href="#about">About</a>
 </div>
+
+<hr>
   
 <div class="left">
 <h5>
