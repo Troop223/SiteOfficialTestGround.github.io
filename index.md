@@ -366,8 +366,8 @@ text-align: left;
 
 /* Left column (menu) */
 .left {
-  flex: 35%;
-  padding: 5px 0;
+  flex: 8%;
+  padding: 15px 0;
 }
 
 .left h2 {
@@ -376,7 +376,7 @@ text-align: left;
 
 /* Right column (page content) */
 .right {
-  flex: 65%;
+  flex: 92%;
   padding: 15px;
 }
 
