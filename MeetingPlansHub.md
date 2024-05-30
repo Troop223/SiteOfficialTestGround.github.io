@@ -1,5 +1,5 @@
 <h2>Here is a Schedule of all our meetings, including previous and future Meetups</h2>
-V1.07
+V1.08
 
 <hr>
 
@@ -85,8 +85,8 @@ tr:nth-child(even) {
 }
 
 .center {
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 20%;
+  margin-right: 20%;
 }
 body{
 
