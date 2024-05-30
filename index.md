@@ -1,5 +1,5 @@
 <h1>Welcome to Troop 223!</h1>
-V3.T1.02
+V4.00
   
 <div class="topnav">
   <a class="active" href="#home">Home</a>
@@ -80,7 +80,7 @@ As previously stated, we try to go camping at least once a month. our goal is to
 
    <hr>
 
-  <h4>Upcoming events and trips for the May</h4>
+  <h4>Upcoming events and trips for the month of May</h4>
   
   <hr>
 
@@ -95,24 +95,21 @@ As previously stated, we try to go camping at least once a month. our goal is to
 
   <hr>
 
-<!--
+<h4>Upcoming Meeting plans</h4>
 
-<h4>Upcoming Meeting plans for May</h4>
-   
   <hr>
 
-  <div class="UlLeft">
+ <div class="UlLeft">
 <ul>
-<li>?</li>
-<li>?</li>
-<li>?</li>
+<li>06/06/24 - Scout Skills (Know tying, etc) - 7:00 PM - 8:30 PM</li>
+<li>05/30/24 - YMCA swim test - 7:00 PM - 8:30 PM</li>
+<li>05/23/24 - Life Skills (Money management, Proper Nutrition, etc) - 7:00 PM - 8:30 PM</li>
 </ul>
   </div>
-<a href="URL">MORE</a>
- 
-  <hr>
 
--->
+<a href="https://troop223.github.io/MeetingPlansHub">MORE</a>
+
+  <hr>
 
 <h4>To see some of our previous trips, please look here:</h4>
 
