@@ -1,11 +1,11 @@
 <h2>Here is a Schedule of all our meetings, including previous and future Meetups</h2>
-V1.15
+V1.16
 
 <hr>
 
 <h3>JUNE</h3>
 
-<table class="center" align="center">
+<table>
   <tr>
     <th>Date</th>
     <th>Description</th>
@@ -33,7 +33,7 @@ V1.15
 
 <h3>MAY</h3>
 
-<table class="center">
+<table>
   <tr>
     <th>Date</th>
     <th>Description</th>
@@ -72,28 +72,22 @@ V1.15
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
-  width: %;
+  width: 50%;
 }
 
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
 
 tr:nth-child(even) {
   background-color: #dddddd;
 }
+  
+table,th,td{
+    margin: auto;
+}
 
   
-body{
-
-text-align: center;
-
-}
-/*
-  td, th {
-  border: 1px solid #dddddd;
-  text-align: center;
-  padding: 8px;
-}
-  */
-
-     
-   }
 </style>
