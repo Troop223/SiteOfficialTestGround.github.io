@@ -1,5 +1,6 @@
 <h2>Here is a Schedule of all our meetings, including previous and future Meetups</h2>
 V1.02
+
 <hr>
 
 <h3>JUNE</h3>
