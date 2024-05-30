@@ -1,11 +1,11 @@
 <h2>Here is a Schedule of all our meetings, including previous and future Meetups</h2>
-V1.14
+V1.15
 
 <hr>
 
 <h3>JUNE</h3>
 
-<table class="center">
+<table class="center" align="center">
   <tr>
     <th>Date</th>
     <th>Description</th>
@@ -94,9 +94,6 @@ text-align: center;
 }
   */
 
-   td, th {
-
-align: center;
      
    }
 </style>
