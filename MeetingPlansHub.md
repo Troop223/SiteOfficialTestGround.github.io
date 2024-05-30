@@ -71,7 +71,7 @@ V1.05
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
-  width: 100%;
+  width: 60%;
 }
 
 
