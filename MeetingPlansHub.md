@@ -1,5 +1,5 @@
 <h2>Here is a Schedule of all our meetings, including previous and future Meetups</h2>
-V1.05
+V1.07
 
 <hr>
 
@@ -68,12 +68,17 @@ V1.05
 
 
 <style>
+  
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 60%;
 }
-
+td, th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+}
 
 tr:nth-child(even) {
   background-color: #dddddd;
