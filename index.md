@@ -1,12 +1,12 @@
-<h1>Welcome to Troop 223!</h1>
-V5.02
-  
 <div class="topnav">
   <a class="active" href="#home">Home</a>
   <a href="#news">News</a>
   <a href="#contact">Contact</a>
   <a href="#about">About</a>
 </div>
+
+<h1>Welcome to Troop 223!</h1>
+V5.03-1
 
 <hr>
   
@@ -356,7 +356,7 @@ text-align: left;
 .topnav {
   overflow: hidden;
   /*turns the background color on News, Contact, and about a color*/
-  background-color: white;
+  background-color: grey;
   
 }
 
@@ -371,13 +371,13 @@ text-align: left;
 
 .topnav a:hover {
 /* changes what color the background, text color when you hover over it*/
-  background-color: #ddd;
+  background-color: darkgrey;
   color: black;
 }
 
 .topnav a.active {
 /*changes the color of the 'Home' background, text color, respectivly*/
-  background-color: #04AA6D;
+  background-color: #3d3332;
   color: white;
 }
   
