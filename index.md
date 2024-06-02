@@ -351,9 +351,13 @@ text-align: left;
     
   }
 
+
+
 .topnav {
   overflow: hidden;
+  /*turns the background color on News, Contact, and about a color*/
   background-color: #333;
+  
 }
 
 .topnav a {
@@ -366,11 +370,13 @@ text-align: left;
 }
 
 .topnav a:hover {
+/* changes what color the background, text color when you hover over it*/
   background-color: #ddd;
   color: black;
 }
 
 .topnav a.active {
+/*changes the color of the 'Home' background, text color, respectivly*/
   background-color: #04AA6D;
   color: white;
 }
