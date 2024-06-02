@@ -1,5 +1,5 @@
 <h1>Welcome to Troop 223!</h1>
-V4.00
+V5.01
   
 <div class="topnav">
   <a class="active" href="#home">Home</a>
@@ -371,7 +371,7 @@ text-align: left;
 
 .topnav a:hover {
 /* changes what color the background, text color when you hover over it*/
-  background-color: #ddd;
+  background-color: white;
   color: black;
 }
 
