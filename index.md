@@ -1,5 +1,7 @@
 <title>BSA Troop 223</title>
 
+<h1>Welcome to Troop 223!</h1>
+
 <div class="topnav">
   <a class="active" href="#HOME">Home</a>
   <a href="https://troop223.github.io/NewsHub">News</a>
@@ -8,8 +10,8 @@
 </div>
 
   <div id="HOME">
-<h1>Welcome to Troop 223!</h1>
-V6.05-1
+
+V6.06-1
 
 <hr>
   
