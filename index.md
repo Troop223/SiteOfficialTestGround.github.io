@@ -11,7 +11,7 @@
 
   <div id="HOME">
 
-V6.06-1
+V6.06-2
 
 <hr>
   
@@ -323,6 +323,8 @@ body {
 text-align: center;
 margin: 0;
 font-family: Arial, Helvetica, sans-serif;
+padding-left: 30%
+padding-right: 30%
   
 }
 
