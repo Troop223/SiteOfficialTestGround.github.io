@@ -9,7 +9,7 @@
 
   <div id="HOME">
 <h1>Welcome to Troop 223!</h1>
-V6.04-1
+V6.05-1
 
 <hr>
   
@@ -32,23 +32,6 @@ will prepair them for life as a responsible adult, to help them understand how t
 </p>
   </h4>
   
-<hr>
-
-  <h3>News</h3>
-
-<hr>
-
-  <div class="UlLeft">
-<ul>
-  <li>Jack's Eagle Ceremony!</li>
-  <li>Swim test at the YMCA</li>
-  <li>Prepairing for Summer Camp</li>
-</ul>  
-  </div>
-    
-  <a href="https://troop223.github.io/NewsHub">MORE</a>
-
-
 <hr>
 
 <img src="https://github.com/Troop223/223-Official/assets/168667435/385fb79e-b8b5-433b-90f5-49fe083b4ee6" alt="An attached image" width=1000 height=600/>
