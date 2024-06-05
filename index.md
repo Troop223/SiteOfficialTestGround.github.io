@@ -1,14 +1,15 @@
 <title>BSA Troop 223</title>
 
 <div class="topnav">
-  <a class="active" href="#home">Home</a>
-  <a href="#news">News</a>
+  <a class="active" href="#HOME">Home</a>
+  <a href="https://troop223.github.io/NewsHub">News</a>
   <a href="#CONTACT">Contact</a>
-  <a href="#about">About</a>
+  <a href="#ABOUT">About</a>
 </div>
 
+  <div id="HOME">
 <h1>Welcome to Troop 223!</h1>
-V6.03-1
+V6.04-1
 
 <hr>
   
@@ -23,6 +24,7 @@ This is a troop whose aim is to help our Scouts, according to the scout oath and
 will prepair them for life as a responsible adult, to help them understand how to be conservation minded, and to to give them the skills to have an effective and proactive adult life.
 
 </h5>
+  </div>
 
   <h4>
 <p>
@@ -59,10 +61,10 @@ Latimer Scout Camp during Sunset
   </div>
   
 <hr>
-
+  <div id="ABOUT">
 Troop 223 tries to offer at least once-monethly campouts to our scouts, in order for them to rapidly advance to the rank of 
 First Class
-
+  </div>
 <hr> 
   <p>
 
