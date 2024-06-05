@@ -1,7 +1,7 @@
 <title>BSA Troop 223</title>
 
   <div class="flexbox-container">
-  <div class="flexbox-container flexboxMain">
+  <div class="flexboxMain">
   
 <div class="topnav">
   <a class="active" href="#HOME">Home</a>
@@ -12,7 +12,7 @@
 
   <div id="HOME">
 <h1>Welcome to Troop 223!</h1>
-V7.02
+V7.04
 
 <hr>
   
@@ -278,15 +278,15 @@ All these tools and more are tought to Scouts, both by Adult leaders and Older Y
 <br>
 Thats why its important to get the proper items for scouting, as it is both crucial for Scouting's image, in addition to being able to save a life if neccessary.
 
-
-
-
-
-
-
-
-
 <hr>
+
+ <!-- NOTE: These Div closers are VERY necessary DO NOT delete -->
+  </div> 
+
+
+
+  <div class="flexbox-item flexbox-CONTACT">
+
 
 <h6>
 
@@ -315,8 +315,7 @@ Or call:  423-355-4430
   </p>
   </h6>
 
- <!-- NOTE: These Div closers are VERY necessary DO NOT delete -->
-  </div> 
+  </div>
   </div>
   
 
@@ -390,7 +389,19 @@ align-items: center;
     
   }
 
+  .flexbox-item{
 
+    width: 100%;
+    background-color: #2b2b2e;
+
+  }
+
+.flexbox-CONTACT {
+
+  min-height: 700px;
+  
+}
+  
   
 </style>
 
