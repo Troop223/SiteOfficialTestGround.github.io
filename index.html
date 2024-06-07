@@ -14,7 +14,7 @@
 
   <div id="HOME">
 <h1>Welcome to Troop 223!</h1>
-V10.00-0/0
+V10.01-0/0
 
 <hr>
   
@@ -319,9 +319,34 @@ Or call:  423-355-4430
   </div>
   </div>
 
+<!-- NOTE: a developer uses all the resources available to them, so chat gpt was used in the creation 
+of this comment section =^_^= -->
+	  
+	  
+<div id="commentBox">
+        <h1>Simple Comment System</h1>
+        <div id="nameInput">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" required>
+            <button id="nameSubmit">Submit</button>
+        </div>
+        <form id="commentForm" style="display: none;">
+            <label for="comment">Your Comment:</label><br>
+            <textarea id="comment" rows="4" cols="50" required></textarea><br>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="comments">
+            <!-- Comments will be displayed here -->
+        </div>
+    </div>
 
+
+
+
+	  
 <style>
 
+	
 body {
 
 text-align: center;
@@ -415,7 +440,106 @@ height: auto;
 	
 }	
 
+  #commentBox {
+        width: 400px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    #comments {
+        margin-top: 20px;
+    }
+    #comments div {
+        margin-bottom: 10px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    #comments div span {
+        font-weight: bold;
+    }
+
+ #commentBox {
+        width: 100%;
+        max-width: 400px; /* Limiting maximum width for better readability */
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin: 0 auto; /* Centering the comment section horizontally */
+    }
+    #comments {
+        margin-top: 20px;
+    }
+    #comments div {
+        margin-bottom: 10px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    #comments div span {
+        font-weight: bold;
+    }	
 	
 </style>
 
 
+<!-- JAVASCRIPT insert -->
+
+
+  <script>
+        // Check if name is already stored in local storage
+        var storedName = localStorage.getItem('userName');
+        if (storedName) {
+            document.getElementById('nameInput').style.display = 'none';
+            document.getElementById('commentForm').style.display = 'block';
+            document.getElementById('commentForm').innerHTML = `
+                <label for="comment">Welcome back, ${storedName}! Enter your comment:</label><br>
+                <textarea id="comment" rows="4" cols="50" required></textarea><br>
+                <button type="submit">Submit</button>`;
+        }
+
+        document.getElementById('nameSubmit').addEventListener('click', function(event) {
+            event.preventDefault();
+            
+            var name = document.getElementById('name').value;
+            
+            if(name.trim() === '') {
+                alert('Please fill in your name');
+                return;
+            }
+            
+            localStorage.setItem('userName', name);
+            document.getElementById('nameInput').style.display = 'none';
+            document.getElementById('commentForm').style.display = 'block';
+            document.getElementById('commentForm').innerHTML = `
+                <label for="comment">Welcome, ${name}! Enter your comment:</label><br>
+                <textarea id="comment" rows="4" cols="50" required></textarea><br>
+                <button type="submit">Submit</button>`;
+        });
+
+        document.getElementById('commentForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            var name = localStorage.getItem('userName');
+            var comment = document.getElementById('comment').value;
+            
+            if(comment.trim() === '') {
+                alert('Please fill in the comment field');
+                return;
+            }
+            
+            var commentContainer = document.createElement('div');
+            var nameElement = document.createElement('span');
+            var commentElement = document.createElement('p');
+
+            nameElement.textContent = name + ': ';
+            commentElement.textContent = comment;
+
+            commentContainer.appendChild(nameElement);
+            commentContainer.appendChild(commentElement);
+
+            document.getElementById('comments').appendChild(commentContainer);
+
+            document.getElementById('comment').value = '';
+        });
+    </script>
