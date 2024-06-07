@@ -14,7 +14,7 @@
 
   <div id="HOME">
 <h1>Welcome to Troop 223!</h1>
-V10.03-0/0
+V10.04-0/0
 
 <hr>
   
@@ -287,7 +287,7 @@ Thats why its important to get the proper items for scouting, as it is both cruc
 of this comment section =^_^= -->
 	  
 	  
-<div id="commentBox">
+ <div id="commentBox">
         <h1>Simple Comment System</h1>
         <div id="nameInput">
             <label for="name">Your Name:</label>
@@ -304,7 +304,152 @@ of this comment section =^_^= -->
 
 
 
+				<!-- JAVASCRIPT insert -->
+ <script>
+                // Load comments from localStorage on page load
+                window.onload = function() {
+                    var comments = JSON.parse(localStorage.getItem('comments')) || [];
+                    renderComments(comments); // Render comments in the order they were stored
+                };
+
+                function renderComments(comments) {
+                    var commentsDiv = document.getElementById('comments');
+                    commentsDiv.innerHTML = '';
+
+                    var latestComments = comments.slice(0, 2); // Get the latest two comments
+                    var restComments = comments.slice(2); // Get the rest of the comments
+
+                    latestComments.forEach(function(comment) {
+                        appendComment(comment);
+                    });
+
+                    restComments.forEach(function(comment) {
+                        appendComment(comment, true);
+                    });
+
+                    if (restComments.length > 0) {
+                        var showMoreButton = document.createElement('button');
+                        showMoreButton.textContent = 'Show More Comments';
+                        showMoreButton.addEventListener('click', function() {
+                            showAllComments(comments);
+                            showMoreButton.style.display = 'none';
+                            closeCommentsButton.style.display = 'inline-block';
+                        });
+
+                        var closeCommentsButton = document.createElement('button');
+                        closeCommentsButton.textContent = 'Close Comments';
+                        closeCommentsButton.style.display = 'none';
+                        closeCommentsButton.addEventListener('click', function() {
+                            hideAllComments(restComments);
+                            showMoreButton.style.display = 'inline-block';
+                            closeCommentsButton.style.display = 'none';
+                        });
+
+                        commentsDiv.appendChild(showMoreButton);
+                        commentsDiv.appendChild(closeCommentsButton);
+                    }
+                }
+
+                function appendComment(comment, hidden) {
+                    var commentContainer = document.createElement('div');
+                    var nameElement = document.createElement('span');
+                    var commentElement = document.createElement('p');
+
+                    nameElement.textContent = comment.name + ': ';
+                    commentElement.textContent = comment.comment;
+
+                    commentContainer.appendChild(nameElement);
+                    commentContainer.appendChild(commentElement);
+
+                    if (hidden) {
+                        commentContainer.classList.add('hidden');
+                    }
+
+                    document.getElementById('comments').appendChild(commentContainer);
+                }
+
+                function showAllComments(comments) {
+                    var hiddenComments = document.querySelectorAll('#comments div.hidden');
+                    hiddenComments.forEach(function(comment) {
+                        comment.classList.remove('hidden');
+                    });
+                }
+
+                function hideAllComments(restComments) {
+                    var commentsDiv = document.getElementById('comments');
+                    var allComments = Array.from(commentsDiv.children);
+                    allComments.forEach(function(comment, index) {
+                        if (index > 1 && restComments.length > 0) {
+                            comment.classList.add('hidden');
+                        }
+                    });
+                }
+
+                // Check if name is already stored in local storage
+                var storedName = localStorage.getItem('userName');
+                if (storedName) {
+                    document.getElementById('nameInput').style.display = 'none';
+                    document.getElementById('commentForm').style.display = 'block';
+                    document.getElementById('commentForm').innerHTML = `
+                        <label for="comment">Welcome back, ${storedName}! Enter your comment:</label><br>
+                        <textarea id="comment" rows="4" cols="50" required></textarea><br>
+                        <button type="submit">Submit</button>`;
+                }
+
+                document.getElementById('nameSubmit').addEventListener('click', function(event) {
+                    event.preventDefault();
+                    
+                    var name = document.getElementById('name').value;
+                    
+                    if(name.trim() === '') {
+                        alert('Please fill in your name');
+                        return;
+                    }
+                    
+                    localStorage.setItem('userName', name);
+                    document.getElementById('nameInput').style.display = 'none';
+                    document.getElementById('commentForm').style.display = 'block';
+                    document.getElementById('commentForm').innerHTML = `
+                        <label for="comment">Welcome, ${name}! Enter your comment:</label><br>
+                        <textarea id="comment" rows="4" cols="50" required></textarea><br>
+                        <button type="submit">Submit</button>`;
+                });
+
+                document.getElementById('commentForm').addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    
+                    var name = localStorage.getItem('userName');
+                    var comment = document.getElementById('comment').value;
+                    
+                    if(comment.trim() === '') {
+                        alert('Please fill in the comment field');
+                        return;
+                    }
+                    
+                    var newComment = {
+                        name: name,
+                        comment: comment
+                    };
+
+                    // Get existing comments or initialize to an empty array
+                    var comments = JSON.parse(localStorage.getItem('comments')) || [];
+                    comments.unshift(newComment); // Add new comment to the beginning of the array
+
+                    localStorage.setItem('comments', JSON.stringify(comments)); // Store the comments
+
+                    renderComments(comments); // Render comments in the order they were stored
+
+                    document.getElementById('comment').value = '';
+                });
+            </script>
+        </div>
+    </div>
+
+
 <hr>
+
+
+		<!-- This is the CONTACT part of the page -->
 
  <!-- NOTE: These Div closers are VERY necessary DO NOT delete -->
   </div> 
@@ -343,7 +488,6 @@ Or call:  423-355-4430
 
   </div>
   </div>
-
 
 
 
@@ -471,144 +615,4 @@ height: auto;
 </style>
 
 
-<!-- JAVASCRIPT insert -->
 
- <script>
-                // Load comments from localStorage on page load
-                window.onload = function() {
-                    var comments = JSON.parse(localStorage.getItem('comments')) || [];
-                    renderComments(comments); // Render comments in the order they were stored
-                };
-
-                function renderComments(comments) {
-                    var commentsDiv = document.getElementById('comments');
-                    commentsDiv.innerHTML = '';
-
-                    var latestComments = comments.slice(0, 3); // Get the latest three comments
-                    var restComments = comments.slice(3); // Get the rest of the comments
-
-                    latestComments.forEach(function(comment) {
-                        appendComment(comment);
-                    });
-
-                    restComments.forEach(function(comment) {
-                        appendComment(comment, true);
-                    });
-
-                    if (restComments.length > 0) {
-                        var showMoreButton = document.createElement('button');
-                        showMoreButton.textContent = 'Show More Comments';
-                        showMoreButton.addEventListener('click', function() {
-                            showAllComments(comments);
-                            showMoreButton.style.display = 'none';
-                            closeCommentsButton.style.display = 'inline-block';
-                        });
-
-                        var closeCommentsButton = document.createElement('button');
-                        closeCommentsButton.textContent = 'Close Comments';
-                        closeCommentsButton.style.display = 'none';
-                        closeCommentsButton.addEventListener('click', function() {
-                            hideAllComments(restComments);
-                            showMoreButton.style.display = 'inline-block';
-                            closeCommentsButton.style.display = 'none';
-                        });
-
-                        commentsDiv.appendChild(showMoreButton);
-                        commentsDiv.appendChild(closeCommentsButton);
-                    }
-                }
-
-                function appendComment(comment, hidden) {
-                    var commentContainer = document.createElement('div');
-                    var nameElement = document.createElement('span');
-                    var commentElement = document.createElement('p');
-
-                    nameElement.textContent = comment.name + ': ';
-                    commentElement.textContent = comment.comment;
-
-                    commentContainer.appendChild(nameElement);
-                    commentContainer.appendChild(commentElement);
-
-                    if (hidden) {
-                        commentContainer.classList.add('hidden');
-                    }
-
-                    document.getElementById('comments').appendChild(commentContainer);
-                }
-
-                function showAllComments(comments) {
-                    var hiddenComments = document.querySelectorAll('#comments div.hidden');
-                    hiddenComments.forEach(function(comment) {
-                        comment.classList.remove('hidden');
-                    });
-                }
-
-                function hideAllComments(restComments) {
-                    var commentsDiv = document.getElementById('comments');
-                    var allComments = Array.from(commentsDiv.children);
-                    allComments.forEach(function(comment, index) {
-                        if (index > 2 && restComments.length > 0) {
-                            comment.classList.add('hidden');
-                        }
-                    });
-                }
-
-                // Check if name is already stored in local storage
-                var storedName = localStorage.getItem('userName');
-                if (storedName) {
-                    document.getElementById('nameInput').style.display = 'none';
-                    document.getElementById('commentForm').style.display = 'block';
-                    document.getElementById('commentForm').innerHTML = `
-                        <label for="comment">Welcome back, ${storedName}! Enter your comment:</label><br>
-                        <textarea id="comment" rows="4" cols="50" required></textarea><br>
-                        <button type="submit">Submit</button>`;
-                }
-
-                document.getElementById('nameSubmit').addEventListener('click', function(event) {
-                    event.preventDefault();
-                    
-                    var name = document.getElementById('name').value;
-                    
-                    if(name.trim() === '') {
-                        alert('Please fill in your name');
-                        return;
-                    }
-                    
-                    localStorage.setItem('userName', name);
-                    document.getElementById('nameInput').style.display = 'none';
-                    document.getElementById('commentForm').style.display = 'block';
-                    document.getElementById('commentForm').innerHTML = `
-                        <label for="comment">Welcome, ${name}! Enter your comment:</label><br>
-                        <textarea id="comment" rows="4" cols="50" required></textarea><br>
-                        <button type="submit">Submit</button>`;
-                });
-
-                document.getElementById('commentForm').addEventListener('submit', function(event) {
-                    event.preventDefault();
-                    
-                    var name = localStorage.getItem('userName');
-                    var comment = document.getElementById('comment').value;
-                    
-                    if(comment.trim() === '') {
-                        alert('Please fill in the comment field');
-                        return;
-                    }
-                    
-                    var newComment = {
-                        name: name,
-                        comment: comment
-                    };
-
-                    // Get existing comments or initialize to an empty array
-                    var comments = JSON.parse(localStorage.getItem('comments')) || [];
-                    comments.unshift(newComment); // Add new comment to the beginning of the array
-
-                    localStorage.setItem('comments', JSON.stringify(comments)); // Store the comments
-
-                    renderComments(comments); // Render comments in the order they were stored
-
-                    document.getElementById('comment').value = '';
-                });
-            </script>
-        </div>
-    </div>
